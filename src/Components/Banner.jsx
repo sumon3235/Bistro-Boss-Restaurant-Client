@@ -12,22 +12,22 @@ const Banner = () => {
     <div className="mb-10 max-w-[1440px] mx-auto">
       <Carousel autoPlay={true} infiniteLoop={true}>
         <div>
-          <img src={img1} />
+          <img className="rounded-2xl" src={img1} />
         </div>
         <div>
-          <img src={img2} />
+          <img className="rounded-2xl" src={img2} />
         </div>
         <div>
-          <img src={img3} />
+          <img className="rounded-2xl" src={img3} />
         </div>
         <div>
-          <img src={img4} />
+          <img className="rounded-2xl" src={img4} />
         </div>
         <div>
-          <img src={img5} />
+          <img className="rounded-2xl" src={img5} />
         </div>
         <div>
-          <img src={img6} />
+          <img className="rounded-2xl" src={img6} />
         </div>
       </Carousel>
     </div>
