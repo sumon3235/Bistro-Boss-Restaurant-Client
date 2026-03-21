@@ -15,7 +15,7 @@ const PopulerItem = () => {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto">
+    <section className="max-w-6xl mx-auto my-16">
       <SectionTile
         subHeading={"---Check it out---"}
         heading={"FROM OUR MENU"}
@@ -24,6 +24,13 @@ const PopulerItem = () => {
         {menu.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
+      </div>
+
+      {/* btn */}
+      <div className="flex justify-center mt-10">
+        <button className="btn bg-orange-500 hover:bg-orange-600">
+          View Full Menu
+        </button>
       </div>
     </section>
   );

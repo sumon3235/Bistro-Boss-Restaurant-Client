@@ -27,7 +27,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-9 list-none">
+        <ul className="hidden md:flex items-center md:gap-3 lg:gap-9 list-none">
           {navLinks.map(({ to, label }) => (
             <li key={to}>
               <NavLink
