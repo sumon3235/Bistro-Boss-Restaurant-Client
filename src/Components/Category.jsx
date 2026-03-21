@@ -51,32 +51,32 @@ const Category = () => {
         className="mySwiper max-w-6xl mx-auto my-16 px-4 gap-3 px-0.5"
       >
         <SwiperSlide>
-          <img src={slide1} alt="" />
-          <h3 className="text-xl md:text-3xl uppercase text-center -mt-16 text-white shadow-sm">
+          <img src={slide1} className="w-full" alt="" />
+          <h3 className="text-xl md:text-3xl uppercase text-center -mt-20 text-white shadow-sm drop-shadow-lg">
             Salads
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide2} alt="" />
-          <h3 className="text-2xl md:text-4xl uppercase text-center -mt-16 text-white shadow-sm">
+          <img src={slide2} className="w-full" alt="" />
+          <h3 className="text-xl md:text-4xl uppercase text-center -mt-20 text-white shadow-sm drop-shadow-lg">
             Pizza
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide3} alt="" />
-          <h3 className="text-2xl md:text-4xl uppercase text-center -mt-16 text-white shadow-sm">
+          <img src={slide3} className="w-full" alt="" />
+          <h3 className="text-xl md:text-4xl uppercase text-center -mt-20 text-white shadow-sm drop-shadow-lg">
             Soup
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide4} alt="" />
-          <h3 className="text-2xl md:text-4xl uppercase text-center -mt-16 text-white shadow-sm">
+          <img src={slide4} className="w-full" alt="" />
+          <h3 className="text-xl md:text-4xl uppercase text-center -mt-20 text-white shadow-sm drop-shadow-lg">
             Desert
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide5} alt="" />
-          <h3 className="text-2xl md:text-4xl uppercase text-center -mt-16 text-white shadow-sm">
+          <img src={slide5} className="w-full" alt="" />
+          <h3 className="text-xl md:text-4xl uppercase text-center -mt-20 text-white shadow-sm">
             Salads
           </h3>
         </SwiperSlide>

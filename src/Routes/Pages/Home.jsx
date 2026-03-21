@@ -1,6 +1,7 @@
 import Banner from "../../Components/Banner";
 import Category from "../../Components/Category";
 import ChefService from "./ChefService";
+import PopulerItem from "./PopulerItem";
 
 
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Category></Category>
             <ChefService></ChefService>
+            <PopulerItem></PopulerItem>
         </div>
     );
 };
