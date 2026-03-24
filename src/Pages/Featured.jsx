@@ -7,7 +7,7 @@ const Featured = () => {
     <section className="px-4 md:px-8 lg:px-12 my-20">
      
       <div 
-        className="relative bg-cover bg-center parallax-bg py-20 px-6 max-w-7xl mx-auto rounded-xl overflow-hidden"
+        className="relative bg-cover bg-center parallax-bg py-20 px-6 max-w-[1350px] mx-auto rounded-xl overflow-hidden"
         style={{ backgroundImage: `url(${featuredBg})` }}
       >
         <div className="absolute inset-0 bg-black/70" />

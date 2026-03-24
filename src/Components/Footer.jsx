@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="bg-[#1a1f3a] w-full">
-        <div className="max-w-7xl mx-auto px-10 py-12 flex flex-col lg:flex-row items-center justify-around gap-10">
+        <div className="max-w-[1350px] mx-auto px-10 py-12 flex flex-col lg:flex-row items-center justify-around gap-10">
           {/* Contact Us */}
           {/* Contact Us */}
           <div className="text-center lg:text-left">

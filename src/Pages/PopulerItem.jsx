@@ -15,12 +15,12 @@ const PopulerItem = () => {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto my-16">
+    <section className="max-w-[1350px] mx-auto my-16">
       <SectionTile
         subHeading={"---Check it out---"}
         heading={"FROM OUR MENU"}
       ></SectionTile>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1350px] mx-auto">
         {menu.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}

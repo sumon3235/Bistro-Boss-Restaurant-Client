@@ -17,7 +17,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-16 px-6 max-w-7xl mx-auto">
+    <section className="py-16 px-6 max-w-[1350px] mx-auto">
 
     {/* Title Section */}
     <SectionTile subHeading={"---What Our Clients Say---"} heading={"TESTIMONIALS"}/>
