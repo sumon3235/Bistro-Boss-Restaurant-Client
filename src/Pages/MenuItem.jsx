@@ -9,7 +9,7 @@ const MenuItem = ({ item }) => {
           style={{ borderRadius: "0px 200px 200px 200px" }}
           src={image}
           alt={name}
-          className="h-16 object-cover shrink-0 bg-[#dfc8be] w-26 rounded-r-full rounded-b-full"
+          className="h-25 w-28 object-cover shrink-0 bg-[#dfc8be] rounded-r-full rounded-b-full"
         />
         {/* Info */}
         <div className="flex-1">

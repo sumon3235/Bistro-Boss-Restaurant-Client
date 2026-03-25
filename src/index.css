@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+}
+
 
 @layer utilities {
   @media (min-width: 768px) {

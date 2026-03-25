@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#0a0a14]/95 text-white backdrop-blur-md border-b border-yellow-600/20 sticky top-0 z-50">
-      <div className="max-w-[1920px] mx-auto px-12 py-4 flex items-center justify-between gap-3 md:gap-0">
+      <div className="max-w-[1350px] mx-auto px-12 py-4 flex items-center justify-between gap-3 md:gap-0">
         {/* Brand */}
         <Link to="/" className="group">
           <p className="text-white font-black tracking-[3px] text-sm font-serif">

@@ -1,6 +1,7 @@
 import featuredBg from "../assets/home/featured.jpg";
 import featuredImg from "../assets/home/featured.jpg";
-import SectionTile from "../Components/Shared/SectionTile";
+import SectionTile from "../Components/Shared/SectionTitle";
+
 
 const Featured = () => {
   return (
@@ -24,7 +25,7 @@ const Featured = () => {
               <img
                 src={featuredImg}
                 alt="Featured food"
-                className="w-full max-w-[400px] h-auto md:h-[280px] object-cover rounded-lg shadow-2xl"
+                className="w-full max-w-100 h-auto md:h-70 object-cover rounded-lg shadow-2xl"
               />
             </div>
 
