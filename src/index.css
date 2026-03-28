@@ -17,3 +17,64 @@ h1, h2, h3 {
     }
   }
 }
+
+
+/* React Tab Style */
+.react-tabs__tab-list {
+  border-bottom:0.2px solid rgba(255, 255, 255, 0.03) !important;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.react-tabs__tab {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.35) !important;
+  padding: 12px 24px !important;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.react-tabs__tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: #BB8506;
+  transition: left 0.35s ease, right 0.35s ease;
+}
+
+.react-tabs__tab:hover {
+  color: white !important;
+  background: transparent !important;
+}
+
+.react-tabs__tab--selected {
+  background: transparent !important;
+  color: orange !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.react-tabs__tab--selected::after {
+  left: 0;
+  right: 0;
+}
+
+.react-tabs__tab:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.react-tabs__tab-list::-webkit-scrollbar {
+  display: none;
+}

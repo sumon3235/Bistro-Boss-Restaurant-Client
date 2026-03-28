@@ -4,7 +4,7 @@ const ChefMenuItem = ({ item }) => {
   return (
     <div className="w-full max-w-[1350px] mx-auto bg-[#F3F3F3] border border-[#E8E8E8] rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer">
       <figure>
-        <img src={image} alt={name} className="w-full h-60 object-cover rounded-lg" />
+        <img src={image} alt={name} className="w-full h-44 object-cover rounded-lg" />
       </figure>
 
       <div className="flex flex-col items-center text-center px-8 py-7 gap-3">
@@ -12,7 +12,7 @@ const ChefMenuItem = ({ item }) => {
           {name}
         </h2>
 
-        <p className="text-[#555] text-sm lg:leading-relaxed">{recipe}</p>
+        <p className="text-[#555] text-sm ">{recipe}</p>
 
         <button className="btn bg-orange-500 hover:bg-orange-700 border-none">
           Add to Cart
