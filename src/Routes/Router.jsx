@@ -5,6 +5,7 @@ import Menu from "../Pages/Menu";
 import Order from "../Pages/Order";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Contact from "../Pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: "/contact",
+          element: <Contact></Contact>
         }
     ]
   },
