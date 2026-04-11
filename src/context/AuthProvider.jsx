@@ -11,6 +11,7 @@ import {
 
 import AuthContext from "./AuthContext";
 import auth from "../firebase/firebase.config";
+import useAxiosPublic from "../hooks/useAxiosPublic"
 
 
 const googleProvider = new GoogleAuthProvider();
@@ -19,6 +20,7 @@ const AuthProvider = ({ children }) => {
  
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axiosPublic = useAxiosPublic();
 
   // Create new user with email & password
   const createUser = (email, password) => {
@@ -56,6 +58,17 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if (currentUser) {
+      const userInfo = { email: currentUser.email };
+      axiosPublic.post('/jwt', userInfo)
+        .then(res => {
+          if (res.data.token) {
+            localStorage.setItem('access-token', res.data.token);
+          }
+        })
+    } else {
+      localStorage.removeItem('access-token');
+    }
       setLoading(false);
     });
     // Cleanup on unmount

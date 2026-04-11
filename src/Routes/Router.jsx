@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivetRoute";
 import Cart from "../Pages/Cart";
 import Dashboard from "../Layout/Dashboard";
 import AllUser from "../Pages/AllUser";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
       // Admin Section route
       {
         path:"users",
-        element:<AllUser></AllUser>
+        element:<AdminRoute><AllUser></AllUser></AdminRoute>
       }
     ]
   }

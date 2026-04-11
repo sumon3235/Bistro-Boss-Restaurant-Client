@@ -125,16 +125,17 @@ const AllUsers = () => {
                   {user.email}
                 </div>
                 <div className="col-span-2 flex justify-center">
-                 {
-                    user.role === 'admin' ? "Admin" : 
-                     <button
-                    onClick={() => handleMakeAdmin(user)}
-                    className="w-8 h-8 bg-[#BB8506] hover:bg-[#a07205] text-white rounded-lg flex items-center justify-center transition-colors duration-200 active:scale-95"
-                    title={user.role === "admin" ? "Admin" : "Make Admin"}
-                  >
-                    <FaUsers className="text-xs" />
-                  </button>
-                 }
+                  {user.role === "admin" ? (
+                    "Admin"
+                  ) : (
+                    <button
+                      onClick={() => handleMakeAdmin(user)}
+                      className="w-8 h-8 bg-[#BB8506] hover:bg-[#a07205] text-white rounded-lg flex items-center justify-center transition-colors duration-200 active:scale-95"
+                      title={user.role === "admin" ? "Admin" : "Make Admin"}
+                    >
+                      <FaUsers className="text-xs" />
+                    </button>
+                  )}
                 </div>
                 <div className="col-span-2 flex justify-center">
                   <button

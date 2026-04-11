@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { FiLogIn, FiUserPlus } from "react-icons/fi";
 import useCart from "../hooks/useCart";
 import { IoCart } from "react-icons/io5";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,12 +20,14 @@ const Navbar = () => {
 
   const { user, setUser, logOut } = useAuth();
   const [cart] = useCart();
+  const queryClient = useQueryClient();
 
   const handleLogout = () => {
     logOut()
       .then(() => {
         setUser(null);
         toast.success("Logout Succesfull")
+        queryClient.clear();
       })
       .catch(error => {
         toast.error(error.message)

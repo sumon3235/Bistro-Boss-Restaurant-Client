@@ -18,11 +18,16 @@ import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { MdDashboard } from "react-icons/md";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const closeSidebar = () => setIsSidebarOpen(false);
-  const isAdmin = true;
+  const [isAdmin, isAdminLoading] = useAdmin();
+
+  if (isAdminLoading) {
+    return <p>Loading Power...</p>; // সুন্দর একটা স্পিনার দিতে পারেন
+  }
 
   // user link
   const userLinks = [
