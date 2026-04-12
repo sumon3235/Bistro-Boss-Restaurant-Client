@@ -26,7 +26,7 @@ const Dashboard = () => {
   const [isAdmin, isAdminLoading] = useAdmin();
 
   if (isAdminLoading) {
-    return <p>Loading Power...</p>; // সুন্দর একটা স্পিনার দিতে পারেন
+    return <div className="flex justify-center max-h-screen"><span className="loading loading-spinner w-20"></span></div>; 
   }
 
   // user link
