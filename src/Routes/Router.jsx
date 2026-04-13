@@ -12,58 +12,96 @@ import Dashboard from "../Layout/Dashboard";
 import AllUser from "../Pages/AllUser";
 import AdminRoute from "./AdminRoute";
 import AddItem from "../Pages/AddItem";
+import ManageItem from "../Pages/ManageItem";
+import UpdateItem from "../Pages/UpdateItem";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
     children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-         {
-          path: "/menu",
-          element: <Menu></Menu>
-        },
-        {
-          path: '/order',
-          element: <PrivateRoute><Order></Order></PrivateRoute>
-        },
-        {
-          path: '/login',
-          element: <Login></Login>
-        },
-        {
-          path: '/register',
-          element: <Register></Register>
-        },
-        {
-          path: "/contact",
-          element: <PrivateRoute><Contact></Contact></PrivateRoute>
-        }
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/menu",
+        element: <Menu></Menu>,
+      },
+      {
+        path: "/order",
+        element: (
+          <PrivateRoute>
+            <Order></Order>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/contact",
+        element: (
+          <PrivateRoute>
+            <Contact></Contact>
+          </PrivateRoute>
+        ),
+      },
+    ],
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "cart",
-        element: <Cart></Cart>
+        element: <Cart></Cart>,
       },
 
       // Admin Section route
       {
-        path:"users",
-        element:<AdminRoute><AllUser></AllUser></AdminRoute>
+        path: "users",
+        element: (
+          <AdminRoute>
+            <AllUser></AllUser>
+          </AdminRoute>
+        ),
       },
       {
-        path:'addItem',
-        element: <AdminRoute><AddItem></AddItem></AdminRoute>
-      }
-    ]
-  }
+        path: "addItem",
+        element: (
+          <AdminRoute>
+            <AddItem></AddItem>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageItem",
+        element: (
+          <AdminRoute>
+            <ManageItem></ManageItem>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "updateItem/:id",
+        element: (
+          <AdminRoute>
+            <UpdateItem />
+          </AdminRoute>
+        ),
+      },
+    ],
+  },
 ]);
 
-export default router
+export default router;

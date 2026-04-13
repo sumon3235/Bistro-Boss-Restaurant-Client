@@ -19,6 +19,7 @@ import { MdDashboard } from "react-icons/md";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import useAdmin from "../hooks/useAdmin";
+import Loading from "../Components/Shared/Loading";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,7 +27,7 @@ const Dashboard = () => {
   const [isAdmin, isAdminLoading] = useAdmin();
 
   if (isAdminLoading) {
-    return <div className="flex justify-center max-h-screen"><span className="loading loading-spinner w-20"></span></div>; 
+    return <Loading></Loading>
   }
 
   // user link
@@ -56,9 +57,9 @@ const Dashboard = () => {
       label: "Add Item",
     },
     {
-      to: "/dashboard/Manageitems",
+      to: "/dashboard/manageitem",
       icon: <HiOutlineBars3BottomRight />,
-      label: "Add Item",
+      label: "Manage Item",
     },
     {
       to: "/dashboard/booking",
