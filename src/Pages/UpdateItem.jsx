@@ -38,7 +38,6 @@ const UpdateItem = () => {
   // Form submit
   const onSubmit = async (data) => {
     try {
-      // Image upload — নতুন image না দিলে পুরনোটা রাখো
       let imageUrl = item?.image;
 
       if (data.image?.length > 0) {

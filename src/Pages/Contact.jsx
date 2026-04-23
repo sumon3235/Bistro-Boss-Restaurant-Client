@@ -172,7 +172,7 @@ const Contact = () => {
                             name="message"
                             placeholder="How can we help you?"
                             required
-                            rows={5}
+                            rows={6}
                             className="bg-[#0f0f19] text-white text-sm px-4 py-3 rounded-lg border border-white/10 outline-none focus:border-[#BB8506] transition-all duration-300 placeholder:text-gray-600 resize-none focus:shadow-[0_0_10px_rgba(187,133,6,0.2)]"
                         />
                     </div>

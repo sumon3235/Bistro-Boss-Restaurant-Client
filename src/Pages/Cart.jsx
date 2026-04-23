@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import SectionTile from "../Components/Shared/SectionTitle";
 import useCart from "../hooks/useCart";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { Link } from "react-router";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -13,7 +14,7 @@ const Cart = () => {
   const handleDeletFood = (item) => {
     axiosSecure.delete(`/carts/${item._id}`).then((res) => {
       if (res.data.deletedCount > 0) {
-        refetch()
+        refetch();
         toast.success(`${item.name} removed!`);
       }
     });
@@ -86,9 +87,21 @@ const Cart = () => {
 
             {/* Pay Button */}
             <div className="sm:w-auto">
-              <button className="w-full sm:w-auto px-8 py-2.5 bg-[#BB8506] hover:bg-[#9a6d05] text-white text-xs font-bold uppercase tracking-[2px] rounded-lg transition-all active:scale-95 shadow-lg shadow-orange-900/10">
-                Pay Now
-              </button>
+             {cart.length > 0 ? (
+  <Link
+    to="/dashboard/payment"
+    className="px-6 py-2.5 bg-[#BB8506] hover:bg-[#a07205] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 active:scale-95"
+  >
+    Pay Now
+  </Link>
+) : (
+  <button
+    disabled
+    className="px-6 py-2.5 bg-base-300 text-base-content/40 text-xs font-bold uppercase tracking-widest rounded-xl cursor-not-allowed"
+  >
+    Pay Now
+  </button>
+)}
             </div>
           </div>
         </div>

@@ -14,6 +14,8 @@ import AdminRoute from "./AdminRoute";
 import AddItem from "../Pages/AddItem";
 import ManageItem from "../Pages/ManageItem";
 import UpdateItem from "../Pages/UpdateItem";
+import Payment from "../Pages/Payment";
+import PaymentHistory from "../Pages/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -62,9 +64,14 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      // User Section Route
       {
         path: "cart",
         element: <Cart></Cart>,
+      },
+      {
+        path:"payment",
+        element: <Payment></Payment>
       },
 
       // Admin Section route
@@ -75,6 +82,10 @@ const router = createBrowserRouter([
             <AllUser></AllUser>
           </AdminRoute>
         ),
+      },
+      {
+        path:"payment-history",
+        element: <PaymentHistory></PaymentHistory>
       },
       {
         path: "addItem",

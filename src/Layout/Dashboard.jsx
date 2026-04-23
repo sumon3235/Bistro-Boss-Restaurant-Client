@@ -20,11 +20,13 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import useAdmin from "../hooks/useAdmin";
 import Loading from "../Components/Shared/Loading";
+import useCart from "../hooks/useCart";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const closeSidebar = () => setIsSidebarOpen(false);
   const [isAdmin, isAdminLoading] = useAdmin();
+  const [cart] = useCart();
 
   if (isAdminLoading) {
     return <Loading></Loading>
@@ -43,7 +45,7 @@ const Dashboard = () => {
       icon: <FaCreditCard />,
       label: "Payment History",
     },
-    { to: "/dashboard/cart", icon: <FaShoppingCart />, label: "My Cart" },
+    { to: "/dashboard/cart", icon: <FaShoppingCart />, label: `My Cart ${cart.length}` },
     { to: "/dashboard/review", icon: <FaStar />, label: "Add Review" },
     { to: "/dashboard/booking", icon: <FaBookOpen />, label: "My Booking" },
   ];
