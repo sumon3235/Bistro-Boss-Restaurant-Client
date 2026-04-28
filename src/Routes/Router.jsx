@@ -16,6 +16,10 @@ import ManageItem from "../Pages/ManageItem";
 import UpdateItem from "../Pages/UpdateItem";
 import Payment from "../Pages/Payment";
 import PaymentHistory from "../Pages/PaymentHistory";
+import AdminHome from "../Pages/AdminHome";
+import UserHome from "../Pages/UserHome";
+import DashboardIndex from "../Components/Shared/DashboardIndex";
+
 
 const router = createBrowserRouter([
   {
@@ -64,16 +68,23 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+        index: true,
+        element: <DashboardIndex></DashboardIndex>
+      },
       // User Section Route
       {
         path: "cart",
         element: <Cart></Cart>,
       },
       {
-        path:"payment",
-        element: <Payment></Payment>
+        path: "payment",
+        element: <Payment></Payment>,
       },
-
+      {
+        path: "userHome",
+        element: <UserHome></UserHome>,
+      },
       // Admin Section route
       {
         path: "users",
@@ -84,8 +95,12 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path:"payment-history",
-        element: <PaymentHistory></PaymentHistory>
+        path: "adminHome",
+        element: <AdminHome></AdminHome>,
+      },
+      {
+        path: "payment-history",
+        element: <PaymentHistory></PaymentHistory>,
       },
       {
         path: "addItem",

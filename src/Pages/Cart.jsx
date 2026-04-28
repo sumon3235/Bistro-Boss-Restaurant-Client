@@ -87,21 +87,21 @@ const Cart = () => {
 
             {/* Pay Button */}
             <div className="sm:w-auto">
-             {cart.length > 0 ? (
-  <Link
-    to="/dashboard/payment"
-    className="px-6 py-2.5 bg-[#BB8506] hover:bg-[#a07205] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 active:scale-95"
-  >
-    Pay Now
-  </Link>
-) : (
-  <button
-    disabled
-    className="px-6 py-2.5 bg-base-300 text-base-content/40 text-xs font-bold uppercase tracking-widest rounded-xl cursor-not-allowed"
-  >
-    Pay Now
-  </button>
-)}
+              {cart.length > 0 ? (
+                <Link
+                  to="/dashboard/payment"
+                  className="px-6 py-2.5 bg-[#BB8506] hover:bg-[#a07205] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 active:scale-95"
+                >
+                  Pay Now
+                </Link>
+              ) : (
+                <button
+                  disabled
+                  className="px-6 py-2.5 bg-base-300 text-base-content/40 text-xs font-bold uppercase tracking-widest rounded-xl cursor-not-allowed"
+                >
+                  Pay Now
+                </button>
+              )}
             </div>
           </div>
         </div>

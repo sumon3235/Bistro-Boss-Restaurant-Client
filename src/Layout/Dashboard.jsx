@@ -21,20 +21,22 @@ import { Helmet } from "react-helmet-async";
 import useAdmin from "../hooks/useAdmin";
 import Loading from "../Components/Shared/Loading";
 import useCart from "../hooks/useCart";
+import { useAuth } from "../context/useAuth";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const closeSidebar = () => setIsSidebarOpen(false);
   const [isAdmin, isAdminLoading] = useAdmin();
   const [cart] = useCart();
+  const {user} = useAuth();
 
   if (isAdminLoading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
 
   // user link
   const userLinks = [
-    { to: "/dashboard", icon: <MdDashboard />, label: "User Home" },
+    { to: "/dashboard/userHome", icon: <MdDashboard />, label: "User Home" },
     {
       to: "/dashboard/reservation",
       icon: <FaCalendarAlt />,
@@ -45,14 +47,18 @@ const Dashboard = () => {
       icon: <FaCreditCard />,
       label: "Payment History",
     },
-    { to: "/dashboard/cart", icon: <FaShoppingCart />, label: `My Cart ${cart.length}` },
+    {
+      to: "/dashboard/cart",
+      icon: <FaShoppingCart />,
+      label: `My Cart ${cart.length}`,
+    },
     { to: "/dashboard/review", icon: <FaStar />, label: "Add Review" },
     { to: "/dashboard/booking", icon: <FaBookOpen />, label: "My Booking" },
   ];
 
   // adminLink
   const adminLinks = [
-    { to: "/dashboard", icon: <MdDashboard />, label: "Admin Home" },
+    { to: "/dashboard/adminHome", icon: <MdDashboard />, label: "Admin Home" },
     {
       to: "/dashboard/addItem",
       icon: <ImSpoonKnife />,
@@ -110,7 +116,8 @@ const Dashboard = () => {
         className={`fixed md:static z-40 md:w-44 lg:w-64 min-h-screen bg-[#BB8506] flex flex-col shrink-0 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
                `}
       >
-        {isAdmin ? (
+        
+        {user && isAdmin && (
           <>
             {/* Brand */}
             <div className="px-6 py-8 border-b border-white/20">
@@ -141,8 +148,11 @@ const Dashboard = () => {
               </ul>
             </nav>
           </>
-        ) : (
-          <>
+        )}
+
+        {
+          user && !isAdmin && 
+           <>
             {/* Brand */}
             <div className="px-6 py-8 border-b border-white/20">
               <p className="text-white font-black tracking-[3px] text-sm font-serif">
@@ -172,7 +182,7 @@ const Dashboard = () => {
               </ul>
             </nav>
           </>
-        )}
+        }
       </aside>
 
       {/* Backdrop */}
