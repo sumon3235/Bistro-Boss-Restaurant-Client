@@ -1,6 +1,7 @@
 import MenuItem from "./MenuItem";
 import useMenu from "../hooks/useMenu";
 import SectionTile from "../Components/Shared/SectionTitle";
+import { Link } from "react-router";
 
 const PopulerItem = () => {
 
@@ -22,9 +23,7 @@ const PopulerItem = () => {
 
       {/* btn */}
       <div className="flex justify-center mt-10">
-        <button className="btn bg-orange-500 hover:bg-orange-600">
-          View Full Menu
-        </button>
+        <Link to="/menu" className="btn bg-orange-500 hover:bg-orange-600">View Full Menu</Link>
       </div>
     </section>
   );

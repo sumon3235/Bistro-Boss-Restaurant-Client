@@ -61,7 +61,20 @@ const UpdateItem = () => {
       // Server এ PUT request
       const res = await axiosSecure.put(`/menu/${id}`, updatedItem);
       if (res.data.modifiedCount || res.data.acknowledged) {
-        toast.success(`${data.name} updated successfully!`);
+        toast.success((t) => (
+          <span className="flex items-center justify-between w-full gap-3">
+            <span>{data.name} updated successfully!</span>
+            <button 
+              onClick={() => toast.dismiss(t.id)}
+              className="ml-2 p-1 hover:bg-black/10 rounded-full transition-colors font-bold text-xs"
+            >
+              ✕
+            </button>
+          </span>
+        ), {
+          duration: 3000, // Auto hide after 3 seconds
+          position: "top-center",
+        });
         navigate("/dashboard/manageItem");
       }
     } catch {

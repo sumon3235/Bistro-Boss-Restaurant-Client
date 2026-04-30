@@ -11,45 +11,60 @@ const Cart = () => {
   const axiosSecure = useAxiosSecure();
 
   // delet funtion
-  const handleDeletFood = (item) => {
-    axiosSecure.delete(`/carts/${item._id}`).then((res) => {
-      if (res.data.deletedCount > 0) {
-        refetch();
-        toast.success(`${item.name} removed!`);
-      }
-    });
-  };
+ // Actual delete function logic
+const handleDeletFood = (item) => {
+  axiosSecure.delete(`/carts/${item._id}`).then((res) => {
+    if (res.data.deletedCount > 0) {
+      refetch();
+      
+      // Success toast with 'X' button
+      toast.success((t) => (
+        <span className="flex items-center justify-between w-full gap-3">
+          <span>{item.name} removed!</span>
+          <button 
+            onClick={() => toast.dismiss(t.id)}
+            className="ml-2 p-1 hover:bg-black/10 rounded-full transition-colors font-bold text-xs"
+          >
+            ✕
+          </button>
+        </span>
+      ), {
+        duration: 3000, // Auto hide after 3 seconds
+        position: "top-center",
+      });
+    }
+  });
+};
 
   // cumtom modern toast with delet funtionlity
   const handleDelete = (item) => {
-    toast(
-      (t) => (
-        <div className="flex flex-col gap-3">
-          <p className="text-sm font-medium ">Are you sure delete this?</p>
-          <div className="flex gap-2">
-            <button
-              onClick={() => toast.dismiss(t.id)}
-              className="flex-1 py-1.5 text-xs font-bold uppercase tracking-wider bg-green-500  hover:bg-green-600 rounded-lg transition-all"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={() => {
-                handleDeletFood(item);
-                toast.dismiss(t.id);
-              }}
-              className="flex-1 py-1.5 text-xs font-bold uppercase tracking-wider text-white bg-red-500 hover:bg-red-600 rounded-lg transition-all"
-            >
-              Delete
-            </button>
-          </div>
+    toast((t) => (
+      <div className="flex flex-col gap-3">
+        <div className="flex justify-between items-start">
+          <p className="text-sm font-medium">Are you sure delete this?</p>
         </div>
-      ),
-      {
-        duration: 3000,
-        position: "top-center",
-      },
-    );
+        <div className="flex gap-2">
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="flex-1 py-1.5 text-xs font-bold uppercase bg-green-500 hover:bg-green-600 rounded-lg"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={() => {
+              handleDeletFood(item);
+              toast.dismiss(t.id);
+            }}
+            className="flex-1 py-1.5 text-xs font-bold uppercase text-white bg-red-500 hover:bg-red-600 rounded-lg"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    ), { 
+      duration: 5000, // Giving a bit more time for confirmation
+      position: "top-center" 
+    });
   };
 
   return (

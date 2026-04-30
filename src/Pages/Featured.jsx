@@ -1,7 +1,7 @@
 import featuredBg from "../assets/home/featured.jpg";
 import featuredImg from "../assets/home/featured.jpg";
 import SectionTile from "../Components/Shared/SectionTitle";
-
+import { Link } from "react-router";
 
 const Featured = () => {
   return (
@@ -40,9 +40,11 @@ const Featured = () => {
                 ingredients. From sizzling grills to delicate desserts, our menu
                 offers something extraordinary for every palate.
               </p>
+              <Link to="/menu">
               <button className="btn bg-orange-500 border-none hover:bg-orange-600">
                 Read More
               </button>
+              </Link>
             </div>
           </div>
         </div>

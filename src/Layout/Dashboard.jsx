@@ -38,11 +38,6 @@ const Dashboard = () => {
   const userLinks = [
     { to: "/dashboard/userHome", icon: <MdDashboard />, label: "User Home" },
     {
-      to: "/dashboard/reservation",
-      icon: <FaCalendarAlt />,
-      label: "Reservation",
-    },
-    {
       to: "/dashboard/payment-history",
       icon: <FaCreditCard />,
       label: "Payment History",
@@ -52,8 +47,6 @@ const Dashboard = () => {
       icon: <FaShoppingCart />,
       label: `My Cart ${cart.length}`,
     },
-    { to: "/dashboard/review", icon: <FaStar />, label: "Add Review" },
-    { to: "/dashboard/booking", icon: <FaBookOpen />, label: "My Booking" },
   ];
 
   // adminLink
@@ -68,11 +61,6 @@ const Dashboard = () => {
       to: "/dashboard/manageitem",
       icon: <HiOutlineBars3BottomRight />,
       label: "Manage Item",
-    },
-    {
-      to: "/dashboard/booking",
-      icon: <FaBook />,
-      label: "ManageBooking",
     },
     { to: "/dashboard/users", icon: <FaUser />, label: "All Users" },
   ];
